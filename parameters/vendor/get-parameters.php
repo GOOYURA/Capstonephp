@@ -47,14 +47,14 @@ require __DIR__ . '/vendor/autoload.php';
 
 
 // STEP 1 : STUDENT TO UPDATE - KEVAULT ENDPOINT URL
-$secret = new AzKeyVault\Secret('https://capstoneproject-kv.vault.azure.net/');
+$secret = new AzKeyVault\Secret('https://capstonekeyvaults.vault.azure.net/');
 $secrets = $secret->getSecrets();
 
 // STEP 2: STUDENT TO MAKE SURE - PARAMETER NAME BELOW MATCHES WITH THE PARAMETER NAME PROVIDED IN KEYVAULT SETTINGS PAGE IN AZURE PORTAL
-$host  = $secret->getSecret('kv-db1-host');
-$username  = $secret->getSecret('kv-db1-username');
-$password = $secret->getSecret('kv-db1-password');
-$db_name  = $secret->getSecret('kv-db1-dbname');
+$host  = $secret->getSecret('sqlcapstonedb.database.windows.net');
+$username  = $secret->getSecret('Urangoo');
+$password = $secret->getSecret('Password123');
+$db_name  = $secret->getSecret('database');
 
 // STEP 3: STUDENT TO DOWNLOAD AND UPLOAD PEM  CERT FOR THE DATABASE CREATED  ( From Azure Portal ) to the SSL folder with the same name as below
 $sslcert    = 'ssl/DigiCertGlobalRootCA.crt.pem';
@@ -85,18 +85,18 @@ $sslcert    = 'ssl/DigiCertGlobalRootCA.crt.pem';
 // Configuration for database connection
 
 # REMOTE DECLARATION
-$host       = getenv('DB_HOST');
-$username   = getenv('DB_USERNAME');
-$password   = getenv('DB_PASSWORD');
-$db_name     = getenv('DB_DATABASE');
+$host       = getenv('sqlcapstonedb.database.windows.net;
+$username   = getenv('Urangoo');
+$password   = getenv('Password123');
+$db_name     = getenv('database');
 $sslcert    = 'ssl/DigiCertGlobalRootCA.crt.pem';
 #$sslcert   = getenv('DB_SSLCERT');
 
 # LOCAL DECLARATION
 #$host       = 'SQLdbENDPOINT';
-#$username   = 'USERNAME';
-#$password   = 'PASSWORD';
-#$db_name    = 'DBNAME';
+#$username   = 'Urangoo';
+#$password   = 'Password123';
+#$db_name    = 'database';
 #$sslcert    = 'ssl/DigiCertGlobalRootCA.crt.pem';
 
 # Test for local file creation
