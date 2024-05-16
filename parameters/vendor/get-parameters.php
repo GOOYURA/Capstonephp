@@ -51,10 +51,10 @@ $secret = new AzKeyVault\Secret('https://capstonekeyvaults.vault.azure.net/');
 $secrets = $secret->getSecrets();
 
 // STEP 2: STUDENT TO MAKE SURE - PARAMETER NAME BELOW MATCHES WITH THE PARAMETER NAME PROVIDED IN KEYVAULT SETTINGS PAGE IN AZURE PORTAL
-$host  = $secret->getSecret('sqlcapstonedb.database.windows.net');
-$username  = $secret->getSecret('Urangoo');
+$host  = $secret->getSecret('capstone-project-1.mysql.database.azure.com');
+$username  = $secret->getSecret('capstonedb');
 $password = $secret->getSecret('Password123');
-$db_name  = $secret->getSecret('database');
+$db_name  = $secret->getSecret('capstone-project-1');
 
 // STEP 3: STUDENT TO DOWNLOAD AND UPLOAD PEM  CERT FOR THE DATABASE CREATED  ( From Azure Portal ) to the SSL folder with the same name as below
 $sslcert    = 'ssl/DigiCertGlobalRootCA.crt.pem';
@@ -85,10 +85,10 @@ $sslcert    = 'ssl/DigiCertGlobalRootCA.crt.pem';
 // Configuration for database connection
 
 # REMOTE DECLARATION
-$host       = getenv('sqlcapstonedb.database.windows.net;
-$username   = getenv('Urangoo');
-$password   = getenv('Password123');
-$db_name     = getenv('database');
+$host       = getenv('DB_HOST');
+$username   = getenv('DB_USERNAME');
+$password   = getenv('DB_PASSWORD');
+$db_name     = getenv('DB_DATABASE');
 $sslcert    = 'ssl/DigiCertGlobalRootCA.crt.pem';
 #$sslcert   = getenv('DB_SSLCERT');
 
